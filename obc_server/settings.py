@@ -26,7 +26,8 @@ SECRET_KEY = 'zl(lpa+=(o&l#y@rpq2ovw_ex@1%%i9poz)m(y(mkl7p=bwqpm'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.0.40'
+    '192.168.0.40',
+    'malina9.ddns.net',
 ]
 
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -51,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'OBC_Server.urls'
+ROOT_URLCONF = 'obc_server.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'OBC_Server.wsgi.application'
+WSGI_APPLICATION = 'obc_server.wsgi.application'
 
 
 # Database
