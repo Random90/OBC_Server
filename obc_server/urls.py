@@ -22,15 +22,22 @@ Including another URLconf
 
 from django.urls import include, path
 from rest_framework import routers
+from rest_framework.urlpatterns import format_suffix_patterns
 from obc_server.obc_sync import views
 
+# @TODO use router or urlpatterns???
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+# router.register(r'rides', views.RidesList)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('rides/', views.RidesList.as_view()),
+    path('rides/<int:pk>/', views.RideDetail.as_view()),
 ]
+
+# urlpatterns = format_suffix_patterns(urlpatterns)
