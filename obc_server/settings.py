@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'obc_server.obc_sync.apps.ObcSyncConfig',
 ]
 
 MIDDLEWARE = [
