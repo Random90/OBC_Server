@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '192.168.0.40',
     'malina9.ddns.net',
+    '127.0.0.1'
 ]
 
 
