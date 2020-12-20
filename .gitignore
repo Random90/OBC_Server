@@ -144,3 +144,4 @@ python.code-workspace
 
 # vscode config
 .vscode/
+obc_server/obc.cnf
