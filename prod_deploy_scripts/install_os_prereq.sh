@@ -2,10 +2,9 @@ if [ "$EUID" -ne 0 ]; then
      echo "Run this script as root user"
     exit
 fi
-# @TODO setup web server and database
 
 LINUX_PREREQ="git build-essential python3-dev python3-pip"
-PYTHON_PREREQ="virtualenv"
+PYTHON_PREREQ=('virtualenv' 'uwsgi')
 
 # Test prerequisites
 echo "Checking if required packages are installed..."
@@ -14,6 +13,8 @@ if [ $? -ne 0 ]; then
     echo "Error installing system packages"
     exit 1
 fi
+
+/usr/bin/python3 -m pip install --upgrade pip
 
 for ppkg in "${PYTHON_PREREQ[@]}"
     do
@@ -26,9 +27,3 @@ for ppkg in "${PYTHON_PREREQ[@]}"
     done
 
 echo "All required packages have been installed!"
-
-echo "Creating log folder and file"
-
-touch /var/log/obc_server.log
-chown dietpi:dietpi /var/log/obc_server.log
-chmod 664 /var/log/obc_server.log
