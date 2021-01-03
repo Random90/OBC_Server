@@ -52,7 +52,7 @@ fi
 if [ ! -d "$INSTALL_LOCATION" ]; then
     echo "Downloading project"
     mkdir "$INSTALL_LOCATION"
-    chown -R chown -R ${USER}:${USER_GROUP} ${INSTALL_LOCATION}
+    chown -R ${USER}:${USER_GROUP} ${INSTALL_LOCATION}
     cd "$INSTALL_LOCATION"
     git clone ${REPO}
     chown -R ${USER}:${USER_GROUP} OBC_Server
