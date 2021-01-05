@@ -6,6 +6,21 @@ SECRET_KEY = 'zl(lpa+=(o&l#y@rpq2ovw_ex@1%%i9poz)m(y(mkl7p=bwqpm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+
 ALLOWED_HOSTS = [
     '192.168.0.40',
     'malina9.ddns.net',
