@@ -6,11 +6,11 @@ class Activity(models.Model):
     circumference = models.IntegerField('size of the wheel with tire')
     rotations = models.IntegerField()
     rideTime = models.IntegerField('total ride time in miliseconds')
-    # user = models.ForeignKey(
-    #     'auth.User',
-    #     related_name='rides',
-    #     on_delete=models.CASCADE
-    # )
+    user = models.ForeignKey(
+        'auth.User',
+        related_name='activities',
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         ordering = ['added']
